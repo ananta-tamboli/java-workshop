@@ -1,0 +1,28 @@
+# DataSource configuration
+spring:
+  application:
+    name: workshop
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydatabase # JDBC URL for MySQL database
+    username: root # Username for MySQL database
+    password: password # Password for MySQL database
+
+# Hibernate configuration
+  jpa:
+    hibernate:
+      ddl-auto: update # Strategy for updating the database schema
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect # Hibernate dialect for MySQL
+        format_sql: true # Whether to format SQL queries before logging
+
+# Logging configuration
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug # Log level for Hibernate SQL statements
+        type:
+          descriptor:
+            sql:
+              BasicBinder: trace # Log level for SQL parameter binding
